@@ -177,23 +177,23 @@ body {
     min-height: 350px;
 }
 
+/* Tüm yazıcı kartları için ortak görsel arka plan ayarları */
 .printer-card::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
+    inset: 0;
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
     opacity: 0.25;
     transition: opacity 0.3s ease;
     pointer-events: none;
     z-index: 0;
     border-radius: 12px;
+    /* background-size: contain görselin tamamının görünmesini garanti eder, hiçbir kısmı kesilmez */
 }
 
+/* Her yazıcı için özel görsel */
 .printer-bambu::after {
     background-image: url('webpage sources/BambulabX1C.png');
 }
@@ -206,6 +206,7 @@ body {
     background-image: url('webpage sources/HalotOne.png');
 }
 
+/* Hover'da görsellerin şeffaflığı azalır (daha görünür olur) */
 .printer-card:hover::after {
     opacity: 0.45;
 }
@@ -215,6 +216,7 @@ body {
     z-index: 1;
 }
 
+/* Parlayan çerçeve efekti (üst kenar) */
 .printer-card::before {
     content: '';
     position: absolute;
@@ -225,6 +227,7 @@ body {
     background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
     transform: scaleX(0);
     transition: transform 0.3s ease;
+    z-index: 2;
 }
 
 .printer-card:hover {
@@ -233,6 +236,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
 }
 
+/* Hover'da parlayan çerçeve görünür */
 .printer-card:hover::before {
     transform: scaleX(1);
 }
