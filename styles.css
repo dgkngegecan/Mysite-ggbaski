@@ -177,49 +177,37 @@ body {
     min-height: 350px;
 }
 
-.printer-background {
+.printer-card::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    transition: opacity 0.3s ease;
     pointer-events: none;
     z-index: 0;
+    border-radius: 12px;
 }
 
-.printer-background::after {
-    content: '';
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 80%;
-    max-width: 360px;
-    border-radius: 24px;
-    background: radial-gradient(circle at center, rgba(0, 212, 255, 0.18) 0%, rgba(0, 212, 255, 0.05) 55%, transparent 90%);
-    filter: blur(0.5px);
-    z-index: 0;
+.printer-bambu::after {
+    background-image: url('webpage sources/BambulabX1C.png');
 }
 
-.printer-photo {
-    width: 82%;
-    max-width: 320px;
-    opacity: 0.22;
-    filter: drop-shadow(0 18px 45px rgba(0, 212, 255, 0.22));
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    transform: translateY(10px);
-    mix-blend-mode: screen;
-    position: relative;
-    z-index: 1;
+.printer-ender::after {
+    background-image: url('webpage sources/Ender3Pro.png');
 }
 
-.printer-card:hover .printer-photo {
-    opacity: 0.48;
-    transform: translateY(0);
+.printer-halot::after {
+    background-image: url('webpage sources/HalotOne.png');
+}
+
+.printer-card:hover::after {
+    opacity: 0.45;
 }
 
 .printer-content {
