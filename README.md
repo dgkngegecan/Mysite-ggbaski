@@ -37,3 +37,5 @@ http://localhost:8000
 - `styles.css` - Dark minimalist styling
 - `script.js` - Interactive features and animations
 
+
+
