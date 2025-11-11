@@ -36,6 +36,26 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
+
+    // Lazy loading for printer images
+    const printerCards = document.querySelectorAll('.printer-card');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const card = entry.target;
+                const afterElement = window.getComputedStyle(card, '::after');
+                // Trigger image load by adding a class
+                card.classList.add('image-loaded');
+                observer.unobserve(card);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+
+    printerCards.forEach(card => {
+        imageObserver.observe(card);
+    });
 });
 
 

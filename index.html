@@ -22,6 +22,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Yazıcılar</a></li>
                 <li><a href="prints.html">Örnek Baskılar</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
             </ul>
         </div>
     </nav>
@@ -35,7 +36,11 @@
         <section class="printers-section">
             <h2 class="section-title">3B Yazıcılarımız</h2>
             <div class="printers-grid">
-                <div class="printer-card printer-bambu">
+                <div class="printer-card printer-bambu" data-status="online">
+                    <div class="printer-status">
+                        <span class="status-indicator status-online"></span>
+                        <span class="status-text">Çevrimiçi</span>
+                    </div>
                     <div class="printer-content">
                         <h3>Bambu Lab X1 Carbon</h3>
                         <p class="printer-type">AMS Ünitesi ile</p>
@@ -49,7 +54,11 @@
                     </div>
                 </div>
 
-                <div class="printer-card printer-ender">
+                <div class="printer-card printer-ender" data-status="offline">
+                    <div class="printer-status">
+                        <span class="status-indicator status-offline"></span>
+                        <span class="status-text">Çevrimdışı</span>
+                    </div>
                     <div class="printer-content">
                         <h3>Ender 3 Pro</h3>
                         <p class="printer-type">Orbiter Direct Drive</p>
@@ -63,7 +72,11 @@
                     </div>
                 </div>
 
-                <div class="printer-card printer-halot">
+                <div class="printer-card printer-halot" data-status="offline">
+                    <div class="printer-status">
+                        <span class="status-indicator status-offline"></span>
+                        <span class="status-text">Çevrimdışı</span>
+                    </div>
                     <div class="printer-content">
                         <h3>Creality Halot One</h3>
                         <p class="printer-type">SLA Reçine Yazıcı</p>
