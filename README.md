@@ -12,14 +12,6 @@ Eskişehir merkezli profesyonel 3D baskı hizmeti. Tek sayfalık dijital kartviz
 - GitHub Pages ile barındırma
 - Frameworksüz, hızlı yükleme
 
-## Yerel Çalıştırma
-
-```bash
-npx -y http-server -p 8000
-```
-
-Ardından tarayıcıda [http://localhost:8000](http://localhost:8000) adresini açın.
-
 ## Dosyalar
 
 - `index.html` — Tek sayfalık ana (ve tek) sayfa
