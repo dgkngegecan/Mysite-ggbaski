@@ -1036,7 +1036,6 @@ img { max-width: 100%; height: auto; display: block; }
   .service-icon { margin: 0; flex-shrink: 0; }
 
   .printer-showcase { grid-template-columns: 1fr; gap: 24px; }
-  .printer-image-wrap { aspect-ratio: 4/3; }
 
   .materials-categories { grid-template-columns: 1fr; }
 
