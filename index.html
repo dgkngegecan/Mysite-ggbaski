@@ -2,200 +2,549 @@
 <html lang="tr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gegebaskı | Yazıcılarımız</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9RG4EMGZE2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-9RG4EMGZE2');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gegebaskı | 3B Baskı Hizmetleri — Eskişehir</title>
+  <meta name="description"
+    content="Eskişehir merkezli profesyonel 3D baskı hizmetleri. FDM ve çok renkli baskı, geniş malzeme seçeneği. Fikirden gerçeğe, en hızlı yol.">
+  <meta name="keywords" content="3D baskı, 3B baskı, Eskişehir, Gegebaskı, FDM, PLA, PETG, ABS, prototip, Bambu Lab">
+  <meta property="og:title" content="Gegebaskı | 3B Baskı Hizmetleri">
+  <meta property="og:description" content="Fikirden gerçeğe, en hızlı yol. Profesyonel 3D baskı hizmetleri.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f7df5'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='900' font-size='60' fill='white'>G</text></svg>">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo"><span class="ge-emphasis">Ge</span><span class="ge-emphasis">ge</span>baskı</div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Yazıcılar</a></li>
-                <li><a href="prints.html">Örnek Baskılar</a></li>
-                <li><a href="about.html">Hakkımızda</a></li>
-                <li><a href="quote.html" class="cta-button">Teklif Al</a></li>
-            </ul>
+
+  <!--
+    NAVBAR
+    Sticky top nav with smooth-scroll anchor links.
+    .scrolled class is toggled via JS when page is scrolled past 40px.
+    Mobile: hamburger toggle opens a slide-in panel (see 640px breakpoint in CSS).
+  -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-icon">G</div>
+        <span class="logo-text">Gegebaskı</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#yazici">Yazıcı</a></li>
+        <li><a href="#malzemeler">Malzemeler</a></li>
+        <li><a href="#süreç">Nasıl Çalışır</a></li>
+        <li><a href="#sss">SSS</a></li>
+        <li><a href="#iletisim" class="nav-cta">İletişim</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!--
+    HERO
+    Full-viewport landing with brand name, tagline, and two primary CTAs.
+    WhatsApp link includes a pre-filled greeting message.
+  -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Eskişehir, Odunpazarı
+      </div>
+      <h1><span class="gradient-text">Gegebaskı</span></h1>
+      <p class="hero-tagline">Fikirden gerçeğe, en hızlı yol.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/905455613765?text=Merhaba%2C%203D%20bask%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+          class="btn btn-primary" target="_blank" rel="noopener" id="hero-whatsapp-btn">
+          <span class="btn-icon">
+            <!-- WhatsApp icon (SVG) -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </span>
+          WhatsApp ile Ulaşın
+        </a>
+        <a href="mailto:gegebaski@gmail.com?subject=3D%20Baskı%20Talebi"
+          class="btn btn-secondary" id="hero-email-btn">
+          <span class="btn-icon">✉️</span>
+          E-posta Gönderin
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- SERVICES — 6 card grid summarizing what we offer -->
+    <section class="section" id="hizmetler">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Hizmetler</span>
+          <h2 class="section-title">Ne Yapıyoruz?</h2>
+          <p class="section-subtitle">Tek bir yazıcıyla sınırlı değiliz — geniş malzeme ve renk yelpazesiyle
+            ihtiyacınıza özel çözümler üretiyoruz.</p>
         </div>
-    </nav>
-
-    <main class="container">
-        <section class="hero">
-            <h1 class="hero-title"><span class="ge-emphasis">Ge</span><span class="ge-emphasis">ge</span>baskı</h1>
-            <p class="hero-subtitle">Kurumsal ve Hobi 3B Baskı Çözümleri</p>
-            <a href="quote.html" class="btn-secondary">Hemen Teklif Al</a>
-        </section>
-
-        <section class="printers-section">
-            <h2 class="section-title">3B Yazıcılarımız</h2>
-            <div class="printers-grid">
-                <div class="printer-card printer-bambu" data-status="online">
-                    <div class="printer-status">
-                        <span class="status-indicator status-online"></span>
-                        <span class="status-text">Çevrimiçi</span>
-                    </div>
-                    <div class="printer-content">
-                        <h3>Bambu Lab X1 Carbon</h3>
-                        <p class="printer-type">AMS Ünitesi ile</p>
-                        <ul class="printer-specs">
-                            <li>Baskı Hacmi: 256×256×256mm</li>
-                            <li>Katman Kalınlığı: 0.05-0.3mm</li>
-                            <li>Malzemeler: PLA, PETG, ABS, PC, PA</li>
-                            <li>Çok Renkli Baskı (AMS)</li>
-                            <li>Yapay Zeka Destekli İzleme</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="printer-card printer-ender" data-status="offline">
-                    <div class="printer-status">
-                        <span class="status-indicator status-offline"></span>
-                        <span class="status-text">Çevrimdışı</span>
-                    </div>
-                    <div class="printer-content">
-                        <h3>Ender 3 Pro</h3>
-                        <p class="printer-type">Orbiter Direct Drive</p>
-                        <ul class="printer-specs">
-                            <li>Baskı Hacmi: 220×220×250mm</li>
-                            <li>Katman Kalınlığı: 0.1-0.4mm</li>
-                            <li>Malzemeler: PLA, PETG, ABS, TPU</li>
-                            <li>Orbiter Direct Drive Ekstrüder</li>
-                            <li>Geliştirilmiş Hassasiyet ve Kontrol</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="printer-card printer-halot" data-status="offline">
-                    <div class="printer-status">
-                        <span class="status-indicator status-offline"></span>
-                        <span class="status-text">Çevrimdışı</span>
-                    </div>
-                    <div class="printer-content">
-                        <h3>Creality Halot One</h3>
-                        <p class="printer-type">SLA Reçine Yazıcı</p>
-                        <ul class="printer-specs">
-                            <li>Baskı Hacmi: 132×80×165mm</li>
-                            <li>Katman Kalınlığı: 0.01-0.15mm</li>
-                            <li>Malzemeler: Reçine (Standart, Dayanıklı, Şeffaf)</li>
-                            <li>2K Monokrom LCD</li>
-                            <li>Yüksek Detaylı Reçine Baskı</li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="services-grid reveal-stagger reveal">
+          <div class="service-card">
+            <div class="service-icon">🎯</div>
+            <div>
+              <h3>Özel 3B Baskı</h3>
+              <p>STL, OBJ, 3MF veya STEP dosyanızı gönderin, biz basalım. Model linkini de kabul ediyoruz.</p>
             </div>
-        </section>
-
-        <section class="featured-preview">
-            <h2 class="section-title">Öne Çıkan Baskılar</h2>
-            <div class="prints-grid">
-                <div class="print-card">
-                    <div class="print-image-placeholder">
-                        <span class="print-label">Mekanik</span>
-                    </div>
-                    <div class="print-info">
-                        <h3>Hassas Dişli</h3>
-                        <p>PETG ile üretilmiş dayanıklı mekanik parça.</p>
-                    </div>
-                </div>
-                <div class="print-card">
-                    <div class="print-image-placeholder">
-                        <span class="print-label">Figür</span>
-                    </div>
-                    <div class="print-info">
-                        <h3>Karakter Modeli</h3>
-                        <p>Yüksek detaylı reçine baskı örneği.</p>
-                    </div>
-                </div>
-                <div class="print-card">
-                    <div class="print-image-placeholder">
-                        <span class="print-label">Prototip</span>
-                    </div>
-                    <div class="print-info">
-                        <h3>Ürün Kasası</h3>
-                        <p>Hızlı prototipleme ile üretilmiş test ürünü.</p>
-                    </div>
-                </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <div>
+              <h3>Çok Renkli Baskı</h3>
+              <p>AMS sistemiyle tek baskıda 4 farklı renk. Dekoratif, figür ve karmaşık tasarımlar için ideal.</p>
             </div>
-            <a href="prints.html" class="btn-secondary">Tüm Örnekleri İncele</a>
-        </section>
-
-        <section class="testimonials-section">
-            <h2 class="section-title">Müşteri Yorumları</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Projem için çok hızlı ve kaliteli bir baskı aldım. İletişim harikaydı,
-                        kesinlikle tavsiye ederim."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <strong>Ahmet Y.</strong>
-                            <span>Mühendis</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Figür baskılarımdaki detaylar inanılmaz. Reçine baskı kalitesi
-                        beklediğimden çok daha iyi."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">Z</div>
-                        <div class="author-info">
-                            <strong>Zeynep K.</strong>
-                            <span>Tasarımcı</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Kırılan parçamın aynısını tasarlayıp bastılar. Makinem tekrar
-                        çalışıyor, teşekkürler Gegebaskı!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <strong>Mehmet S.</strong>
-                            <span>Hobi Kullanıcısı</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚙️</div>
+            <div>
+              <h3>Prototipleme</h3>
+              <p>Fikrinizi fiziksel ürüne dönüştürün. Mühendislik ve ürün geliştirme projelerine hızlı prototip.</p>
             </div>
-        </section>
-
-        <section class="contact-section">
-            <h2 class="section-title">İletişime Geçin</h2>
-            <div class="contact-info">
-                <a href="https://wa.me/905455613765" class="contact-item" target="_blank">
-                    <span class="contact-icon">📱</span>
-                    <div>
-                        <strong>WhatsApp</strong>
-                        <p>+90 545 561 37 65</p>
-                    </div>
-                </a>
-                <a href="mailto:gegebaski@gmail.com" class="contact-item">
-                    <span class="contact-icon">✉️</span>
-                    <div>
-                        <strong>E-posta</strong>
-                        <p>gegebaski@gmail.com</p>
-                    </div>
-                </a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📦</div>
+            <div>
+              <h3>Küçük Seri Üretim</h3>
+              <p>20–50 adetlik siparişler için küçük parti baskı. Ticari veya kişisel projeleriniz için uygun.</p>
             </div>
-        </section>
-    </main>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <div>
+              <h3>Yedek Parça &amp; Onarım</h3>
+              <p>Kırılan plastik parçanızı yeniden basabiliriz. Uygunluk için iletişime geçin.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💬</div>
+            <div>
+              <h3>Tasarım Danışmanlığı</h3>
+              <p>Modeliniz yok mu? İhtiyacınızı anlatın, 3B çizim konusunda birlikte çözüm üretelim.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer">
-        <p>&copy; 2024 <span class="ge-emphasis">Ge</span><span class="ge-emphasis">ge</span>baskı. Tüm hakları
-            saklıdır.</p>
-    </footer>
+    <!-- PRINTER — Bambu Lab X1 Carbon showcase with specs -->
+    <section class="section" id="yazici">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Ekipman</span>
+          <h2 class="section-title">Yazıcımız</h2>
+          <p class="section-subtitle">Profesyonel kalite ve hız için sektörün en güçlü masaüstü yazıcısı.</p>
+        </div>
+        <div class="printer-showcase reveal">
+          <div class="printer-image-wrap">
+            <div class="printer-status-badge">
+              <span class="dot"></span>
+              Aktif
+            </div>
+            <img src="webpage sources/BambulabX1C.png" alt="Bambu Lab X1 Carbon 3D Yazıcı" loading="lazy">
+          </div>
+          <div class="printer-details">
+            <h3>Bambu Lab X1 Carbon</h3>
+            <p class="printer-subtitle">AMS (Otomatik Malzeme Sistemi) ile</p>
+            <div class="spec-grid">
+              <div class="spec-item">
+                <div class="spec-label">Baskı Hacmi</div>
+                <div class="spec-value">256 × 256 × 256 mm</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label">Nozul Sıcaklığı</div>
+                <div class="spec-value">Maks. 300°C</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label">Nozul Tipi</div>
+                <div class="spec-value">Sertleştirilmiş Çelik</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label">Tabla Sıcaklığı</div>
+                <div class="spec-value">Maks. 110°C</div>
+              </div>
+            </div>
+            <div class="printer-features">
+              <span class="tag">Çok Renkli (4 renk AMS)</span>
+              <span class="tag">Otomatik Kalibrasyon</span>
+              <span class="tag">Yapay Zekâ İzleme</span>
+              <span class="tag">CoreXY Hız</span>
+              <span class="tag">Kapalı Kabinet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- MATERIALS — 4 categories: Decorative, Mechanical, Flexible, Surface finishes -->
+    <section class="section" id="malzemeler">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Malzemeler</span>
+          <h2 class="section-title">Ne İle Basıyoruz?</h2>
+          <p class="section-subtitle">Projenizin ihtiyacına göre doğru malzemeyi birlikte seçiyoruz.</p>
+        </div>
+        <div class="materials-categories reveal-stagger reveal">
+          <div class="material-category">
+            <div class="material-category-header">
+              <div class="material-category-icon">🎨</div>
+              <div>
+                <h3>Dekoratif Kullanım</h3>
+                <p>Görselliğin ön planda olduğu baskılar</p>
+              </div>
+            </div>
+            <div class="material-tags">
+              <span>PLA</span>
+              <span>İpeksi (Silk) PLA</span>
+              <span>Mat PLA</span>
+              <span>Simli (Sparkle)</span>
+              <span>Ahşap Dolgulu (Woodfill)</span>
+              <span>Metal Dolgulu (Brass / Copper / Gold)</span>
+            </div>
+          </div>
+          <div class="material-category">
+            <div class="material-category-header">
+              <div class="material-category-icon">⚙️</div>
+              <div>
+                <h3>Mekanik &amp; Mühendislik</h3>
+                <p>Dayanıklılık ve teknik performans</p>
+              </div>
+            </div>
+            <div class="material-tags">
+              <span>PETG</span>
+              <span>ABS</span>
+              <span>ASA</span>
+              <span>PA (Naylon)</span>
+              <span>PC (Polikarbonat)</span>
+              <span>PP (Polipropilen)</span>
+              <span>Karbon Fiber (CF)</span>
+              <span>Cam Fiber (GF)</span>
+            </div>
+          </div>
+          <div class="material-category">
+            <div class="material-category-header">
+              <div class="material-category-icon">🔄</div>
+              <div>
+                <h3>Esnek Malzemeler</h3>
+                <p>Elastik ve darbe emici parçalar</p>
+              </div>
+            </div>
+            <div class="material-tags">
+              <span>TPU</span>
+              <span>TPU 95A</span>
+              <span>Yumuşak TPU</span>
+            </div>
+          </div>
+          <div class="material-category">
+            <div class="material-category-header">
+              <div class="material-category-icon">✨</div>
+              <div>
+                <h3>Özel Dokular &amp; Kaplamalar</h3>
+                <p>Her malzemenin farklı yüzey seçenekleri</p>
+              </div>
+            </div>
+            <div class="material-tags">
+              <span>Mat Yüzey</span>
+              <span>İpeksi Yüzey</span>
+              <span>Simli Efekt</span>
+              <span>Ahşap Doku</span>
+              <span>Metalik Görünüm</span>
+              <span>Karbon / Cam Takviyeli</span>
+            </div>
+          </div>
+        </div>
+        <p class="materials-note reveal">
+          <strong>Not:</strong> Tüm malzemeler her renkte mevcut olmayabilir. Detaylar için iletişime geçin.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROCESS — 4-step order flow -->
+    <section class="section" id="süreç">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Süreç</span>
+          <h2 class="section-title">Nasıl Çalışır?</h2>
+          <p class="section-subtitle">Dört adımda fikriniz elinizde.</p>
+        </div>
+        <div class="process-steps reveal-stagger reveal">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h4>Model Gönderimi</h4>
+            <p>STL/OBJ/3MF/STEP dosyanızı veya Thingiverse, Printables, MakerWorld gibi sitelerin linkini gönderin.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h4>Fiyat &amp; Malzeme</h4>
+            <p>Fiyat teklifi çıkarıp malzeme önerisi sunuyoruz. Birlikte en uygun seçeneği belirliyoruz.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h4>Baskı &amp; Kontrol</h4>
+            <p>Baskınızı üretip fotoğraflarını sizinle paylaşıyoruz. Onayınızla sonraki adıma geçiyoruz.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h4>Kargo</h4>
+            <p>Türkiye'nin her yerine kargo ile gönderim. Eskişehir'de elden teslim de mümkün.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY — Masaüstü Ekibi partnership highlight -->
+    <section class="section" id="topluluk">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Topluluk</span>
+          <h2 class="section-title">Masaüstü Ekibi</h2>
+          <p class="section-subtitle">Bağımsız masaüstü oyun ekibimizin resmi 3B baskı partneri.</p>
+        </div>
+        <div class="community-card reveal">
+          <div class="community-card-inner">
+            <div class="community-icon">🎲</div>
+            <div class="community-content">
+              <h3>@masaustu.ekibi</h3>
+              <p>Masaüstü Ekibi için kutu oyunu insert'leri, kart tutucular ve oyun aksesuarları tasarlıyor ve
+                basıyorum. Ekibin envanter ve 3B baskı ihtiyaçlarının tamamını karşılıyorum.</p>
+              <div class="community-tags">
+                <span>Kutu Oyunu Insert'leri</span>
+                <span>Kart Tutucular</span>
+                <span>Oyun Aksesuarları</span>
+                <span>Envanter Üretimi</span>
+              </div>
+              <a href="https://www.instagram.com/masaustu.ekibi" class="community-link" target="_blank" rel="noopener"
+                id="masaustu-instagram">
+                <!-- Instagram icon -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+                Instagram'da Takip Et
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY — Placeholder until print photos are added -->
+    <section class="section" id="galeri">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Galeri</span>
+          <h2 class="section-title">Örnek Baskılar</h2>
+        </div>
+        <div class="gallery-placeholder reveal">
+          <div class="gallery-icon">📸</div>
+          <h3>Yakında burada!</h3>
+          <p>Tamamlanmış baskı projelerimizin fotoğrafları eklenecek.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ — Accordion, toggled via .active class in JS -->
+    <section class="section" id="sss">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">SSS</span>
+          <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" id="faq-q1">
+              Minimum sipariş miktarı nedir?
+              <span class="faq-chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>Kargo ile gönderilecek siparişlerde minimum 50 gram malzeme ağırlığı gerekmektedir. Eskişehir'de elden
+                teslim alacaksanız minimum sipariş şartı yoktur.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" id="faq-q2">
+              Fiyatlandırma nasıl yapılıyor?
+              <span class="faq-chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>Fiyat; kullanılan malzeme ağırlığı, baskı süresi, ek malzemeler ve kullanılan aksesuarlar dikkate
+                alınarak hesaplanan bir formüle göre belirlenir. Net fiyat için modelinizi gönderin, hemen teklif
+                verelim.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" id="faq-q3">
+              Kargo yapıyor musunuz?
+              <span class="faq-chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>Evet, Türkiye'nin her yerine kargo ile gönderim yapıyoruz. Kargo ücreti alıcıya aittir. Eskişehir'de
+                elden teslim seçeneği de mevcuttur.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" id="faq-q4">
+              Hangi dosya formatlarını kabul ediyorsunuz?
+              <span class="faq-chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>STL, OBJ, 3MF ve STEP formatlarını kabul ediyoruz. Ayrıca Thingiverse, Printables, MakerWorld veya
+                Thangs gibi platformlardan doğrudan model linki de gönderebilirsiniz.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" id="faq-q5">
+              Modelim yok, siz tasarlar mısınız?
+              <span class="faq-chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>3B çizim doğrudan sunduğumuz bir hizmet değildir, ancak ihtiyacınıza göre birlikte çözüm üretebiliriz.
+                Detaylar için WhatsApp'tan iletişime geçmeniz yeterli.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" id="faq-q6">
+              Toplu üretim yapıyor musunuz?
+              <span class="faq-chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>20 ile 50 adet arasında küçük seri baskı yapabiliyoruz. Daha büyük hacimli siparişler için önce
+                iletişime geçmenizi öneriyoruz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT — 2×2 grid of clickable contact cards + footer -->
+    <section class="section" id="iletisim">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">İletişim</span>
+          <h2 class="section-title">Bize Ulaşın</h2>
+          <p class="section-subtitle">Projenizi konuşmak için hemen yazın — genellikle aynı gün dönüş yapıyoruz.</p>
+        </div>
+
+        <div class="contact-grid reveal-stagger reveal">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/905455613765?text=Merhaba%2C%203D%20bask%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+            class="contact-card contact-card-whatsapp" target="_blank" rel="noopener" id="contact-whatsapp">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <div class="label">WhatsApp</div>
+              <div class="value">WhatsApp'tan Yazın</div>
+            </div>
+          </a>
+          <!-- Email -->
+          <a href="mailto:gegebaski@gmail.com?subject=3D%20Baskı%20Talebi" class="contact-card" id="contact-email">
+            <div class="contact-card-icon">✉️</div>
+            <div class="contact-card-info">
+              <div class="label">E-posta</div>
+              <div class="value">gegebaski@gmail.com</div>
+            </div>
+          </a>
+          <!-- Location -->
+          <div class="contact-card" id="contact-location">
+            <div class="contact-card-icon">📍</div>
+            <div class="contact-card-info">
+              <div class="label">Konum</div>
+              <div class="value">Eskişehir, Odunpazarı</div>
+            </div>
+          </div>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/dogukangegecan" class="contact-card contact-card-instagram"
+            target="_blank" rel="noopener" id="contact-instagram">
+            <div class="contact-card-icon">
+              <!-- Instagram gradient icon -->
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="url(#ig-gradient)">
+                <defs>
+                  <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#feda75" />
+                    <stop offset="25%" stop-color="#fa7e1e" />
+                    <stop offset="50%" stop-color="#d62976" />
+                    <stop offset="75%" stop-color="#962fbf" />
+                    <stop offset="100%" stop-color="#4f5bd5" />
+                  </linearGradient>
+                </defs>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <div class="label">Instagram</div>
+              <div class="value">@dogukangegecan</div>
+            </div>
+          </a>
+        </div>
+
+        <footer class="footer-bottom">
+          <p class="footer-copyright">&copy; 2025 Gegebaskı. Tüm hakları saklıdır.</p>
+          <div class="footer-file-formats">
+            <span>Kabul edilen formatlar:</span>
+            <code>.STL</code>
+            <code>.OBJ</code>
+            <code>.3MF</code>
+            <code>.STEP</code>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Persistent floating WhatsApp CTA — always visible bottom-right -->
+  <a href="https://wa.me/905455613765?text=Merhaba%2C%203D%20bask%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+    class="whatsapp-float" target="_blank" rel="noopener" id="whatsapp-float-btn"
+    aria-label="WhatsApp ile iletişime geçin">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <span>Yazın</span>
+  </a>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,41 +1,29 @@
-# 3D Print Studio Website
+# Gegebaskı — 3B Baskı Hizmetleri
 
-A dark, minimalist website showcasing 3D printing services with information about printers and example prints.
+Eskişehir merkezli profesyonel 3D baskı hizmeti. Tek sayfalık dijital kartvizit web sayfası.
 
-## Features
+## 🔗 Canlı Site
 
-- **Two Pages:**
-  - Printers page (`index.html`) - Information about available 3D printers
-  - Example Prints page (`prints.html`) - Gallery of example prints
+[site.ggbaski.com](https://site.ggbaski.com)
 
-- **Dark Minimalist Theme** with modern design elements
-- **Contact Information:**
-  - WhatsApp: +1 (234) 567-8900
-  - Email: contact@3dprintstudio.com
+## Teknoloji
 
-## Running Locally
+- Vanilla HTML / CSS / JavaScript
+- GitHub Pages ile barındırma
+- Frameworksüz, hızlı yükleme
 
-### Option 1: Python HTTP Server
+## Yerel Çalıştırma
+
 ```bash
-python -m http.server 8000
+npx -y http-server -p 8000
 ```
 
-### Option 2: Node.js HTTP Server
-```bash
-npx http-server -p 8000
-```
+Ardından tarayıcıda [http://localhost:8000](http://localhost:8000) adresini açın.
 
-Then open your browser and navigate to:
-```
-http://localhost:8000
-```
+## Dosyalar
 
-## Files
-
-- `index.html` - Main page (Printers)
-- `prints.html` - Example prints gallery
-- `styles.css` - Dark minimalist styling
-- `script.js` - Interactive features and animations
-
-
-
+- `index.html` — Tek sayfalık ana (ve tek) sayfa
+- `styles.css` — Tasarım sistemi ve stiller
+- `script.js` — Etkileşimler ve animasyonlar
+- `CNAME` — Özel alan adı ayarı
+- `webpage sources/` — Yazıcı görselleri
