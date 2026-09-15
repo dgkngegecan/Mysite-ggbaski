@@ -1,4 +1,4 @@
-/* Gegebaskı — quiet product storytelling, progressive enhancement. */
+/* Gegebaskı — a personal 3D printing service, with contact as the primary action. */
 :root {
   color-scheme: light dark;
   --surface: #ffffff;
@@ -18,6 +18,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height, 68px) + 20px); }
+html.wheel-scrolling { scroll-behavior: auto; }
 body { margin: 0; background: var(--surface); color: var(--content); font-family: var(--font); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-wrap: break-word; }
 h1, h2, h3, p, figure, dl, dd { margin: 0; }
 h1, h2, h3 { text-wrap: balance; font-weight: 650; }
@@ -34,7 +35,7 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
 ::selection { background: #cce1ff; color: #1d1d1f; }
 .container { width: min(var(--container), calc(100% - 64px)); margin-inline: auto; }
 .section { padding-block: 112px; }
-.printer-copy, .accessory-card, .community-heading, .community-copy { min-width: 0; }
+.community-heading, .community-copy { min-width: 0; }
 .secondary-text { color: var(--content-secondary); }
 .eyebrow { font-size: .75rem; letter-spacing: .12em; font-weight: 650; line-height: 1.5; color: var(--content-secondary); }
 .skip-link { position: fixed; z-index: 100; top: 12px; left: 12px; padding: 12px 20px; background: var(--surface); color: var(--accent); box-shadow: 0 2px 20px #0002; clip-path: inset(100%); }
@@ -62,13 +63,10 @@ summary { list-style: none; cursor: pointer; }
 summary::-webkit-details-marker { display: none; }
 
 /* A single entrance moment. Content stays visible if JS or animation is absent. */
-.hero-copy { text-align: center; padding-top: 76px; padding-bottom: 56px; animation: enter .65s ease-out both; }
+.hero-copy { text-align: center; padding-top: 76px; padding-bottom: 32px; animation: enter .65s ease-out both; }
 .hero h1 { font-size: clamp(3rem, 6.3vw, 5rem); line-height: 1.025; letter-spacing: -.055em; margin-block: 18px 26px; }
 .hero h1 .secondary-text { color: var(--content-secondary); }
 .hero-description { font-size: clamp(1.0625rem, 1.6vw, 1.25rem); line-height: 1.55; color: var(--content-secondary); margin-bottom: 26px; }
-.hero-figure { width: min(1440px, calc(100% - 48px)); margin: 0 auto; }
-.hero-image { width: 100%; aspect-ratio: 3.2; object-fit: cover; border-radius: 26px; background: #e6e6e6; }
-.hero-figure figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 13px 12px 0; font-size: .75rem; color: var(--content-secondary); }
 .service-strip { display: flex; justify-content: center; gap: 36px; padding-block: 34px 40px; color: var(--content-secondary); font-size: .8125rem; }
 .service-strip span + span { border-left: 1px solid var(--rule); padding-left: 36px; }
 @keyframes enter { from { opacity: .5; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -82,32 +80,46 @@ summary::-webkit-details-marker { display: none; }
 .service-card { padding: 36px 30px; border-radius: 26px; background: var(--surface); display: flex; flex-direction: column; align-items: flex-start; }
 .service-icon { width: 42px; height: 42px; margin-bottom: 36px; }
 .service-card p { margin-top: 16px; color: var(--content-secondary); font-size: 1rem; line-height: 1.65; }
+.service-card > * { min-width: 0; max-width: 100%; }
 .card-caption { display: block; color: var(--content-secondary); font-size: .8125rem; line-height: 1.5; }
 .service-card .card-caption { margin-top: auto; padding-top: 32px; }
 .section-footnote { margin-top: 28px; font-size: .8125rem; color: var(--content-secondary); }
 
-/* Personal experience leads into the equipment, keeping the maker in the story. */
+/* The visual emphasis belongs to the maker and the service. */
+.hero-description { max-width: 760px; margin-inline: auto; }
+.hero-help { color: var(--content-secondary); font-size: .875rem; margin-top: 20px; }
+.start-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.start-option { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-width: 0; padding: 24px; background: var(--surface-secondary); border-radius: 20px; transition: box-shadow .2s ease, transform .2s ease; }
+.start-option:hover { box-shadow: 0 0 0 2px var(--accent); transform: translateY(-2px); }
+.start-option:active { transform: scale(.99); }
+.start-copy { min-width: 0; }
+.start-copy strong { display: block; font-size: 1.0625rem; font-weight: 600; letter-spacing: -.02em; }
+.start-copy > span { display: block; margin-top: 6px; color: var(--content-secondary); font-size: .875rem; line-height: 1.5; }
+.start-arrow { flex-shrink: 0; color: var(--accent); font-size: 1.25rem; }
+.service-card .service-cta { margin-top: auto; padding-top: 24px; font-size: .9375rem; }
+.experience-section { background: var(--dark-surface); --content: var(--dark-content); --content-secondary: var(--dark-secondary); --accent: var(--dark-accent); --rule: #3d3d43; color: var(--content); }
+.equipment-section { padding-block: 80px; }
+.equipment-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: center; gap: 64px; }
+.equipment-figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 68% center; border-radius: 24px; }
+.equipment-figure figcaption { margin-top: 10px; color: var(--content-secondary); font-size: .75rem; }
+.equipment-copy { min-width: 0; }
+.equipment-copy h2 { margin-block: 12px 20px; font-size: clamp(2rem, 3.2vw, 2.5rem); }
+.equipment-copy > p:not(.eyebrow), .equipment-benefits { font-size: 1rem; color: var(--content-secondary); }
+.equipment-benefits { list-style: none; padding: 0; margin: 20px 0 24px; }
+.equipment-benefits li + li { margin-top: 14px; }
+.equipment-benefits strong { color: var(--content); font-weight: 600; }
+.equipment-disclosure { width: 100%; }
+.equipment-disclosure summary { color: var(--content-secondary); }
+.equipment-disclosure .spec-content { max-width: 860px; }
+.capability-list { padding-left: 22px; margin: 0; }
+.capability-list li + li { margin-top: 12px; }
+.capability-list strong { color: var(--content); }
+
 .experience-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 80px; }
 .experience-layout .section-heading { margin-bottom: 0; }
 .experience-copy { min-width: 0; font-size: 1.1875rem; }
 .experience-copy p + p { margin-top: 22px; color: var(--content-secondary); }
 .experience-copy .text-link { margin-top: 24px; }
-
-/* The close-up is the visual signature: it explains the second nozzle. */
-.equipment-section { padding-block: 108px 56px; background: var(--dark-surface); color: var(--dark-content); --accent: var(--dark-accent); --content-secondary: var(--dark-secondary); --rule: #3d3d43; }
-.equipment-heading { text-align: center; margin-bottom: 40px; }
-.equipment-heading .eyebrow { color: var(--dark-secondary); }
-.printer-feature { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
-.printer-copy { padding-block: 48px; }
-.product-name { font-weight: 600; font-size: .875rem; line-height: 1.5; }
-.printer-copy .product-name { color: var(--dark-secondary); margin-bottom: 22px; }
-.printer-copy h3 { font-size: clamp(2.75rem, 5vw, 4.125rem); line-height: 1.05; letter-spacing: -.045em; margin-bottom: 28px; }
-.printer-copy > p:not(.product-name) { color: var(--dark-secondary); font-size: 1.125rem; }
-.printer-copy .printer-secondary { margin-top: 22px; }
-.feature-points { display: flex; gap: 8px 18px; flex-wrap: wrap; border-top: 1px solid var(--rule); padding-top: 24px; margin-top: 32px; font-size: .8125rem; color: var(--dark-content); }
-.nozzle-figure { position: relative; align-self: stretch; min-width: 0; }
-.nozzle-figure img { width: 100%; height: 100%; max-height: 690px; object-fit: cover; border-radius: 24px; }
-.nozzle-figure figcaption { position: absolute; inset: auto 0 0; padding: 48px 18px 18px; background: linear-gradient(transparent, #101012); font-size: .75rem; color: #d2d2d7; text-align: center; }
 
 /* Native disclosures keep specs and FAQ keyboard accessible and progressively enhanced. */
 .spec-disclosure { border-top: 1px solid var(--rule); }
@@ -124,20 +136,6 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
 .spec-content dl > div { padding-block: 10px; }
 .spec-content dt { font-size: .8125rem; color: var(--content-secondary); margin-bottom: 3px; }
 .spec-content dd { font-weight: 550; color: var(--content); overflow-wrap: anywhere; }
-.spec-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
-.dark-disclosure { margin-top: 32px; }
-.dark-disclosure .spec-content dd { color: var(--dark-content); }
-.dark-disclosure summary { color: var(--dark-secondary); }
-.compact-heading { text-align: center; margin-bottom: 52px; }
-.accessory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
-.accessory-card { background: var(--surface-secondary); padding: 40px 40px 8px; border-radius: 28px; }
-.accessory-copy .product-name { color: var(--content-secondary); margin-bottom: 20px; }
-.accessory-copy h3 { font-size: clamp(2rem, 3.1vw, 2.625rem); line-height: 1.09; margin-bottom: 22px; }
-.accessory-copy > p:not(.product-name) { color: var(--content-secondary); font-size: 1.0625rem; line-height: 1.6; min-height: 110px; }
-.ams-image, .dryer-image { width: 100%; height: 320px; object-fit: contain; margin-block: 10px 20px; }
-.ams-image { object-fit: cover; }
-.accessory-card .spec-disclosure summary { font-size: .875rem; }
-
 /* Illustrative material swatches: layered surfaces, not fabricated portfolio work. */
 .materials-section { background: var(--surface-secondary); }
 .material-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; }
@@ -177,7 +175,7 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
 .community-heading .eyebrow { margin-bottom: 16px; }
 .community-copy { font-size: 1.1875rem; }
 .community-copy p + p { margin-top: 20px; }
-.community-copy .text-link { margin-top: 22px; }
+.community-copy .text-link { display: flex; width: fit-content; max-width: 100%; margin-top: 22px; }
 .faq-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: start; }
 .faq-layout .section-heading { margin-bottom: 0; }
 .faq-layout .section-heading .text-link { margin-top: 28px; }
@@ -201,22 +199,21 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
 
 @media (prefers-color-scheme: dark) {
   :root { --surface: #101012; --surface-secondary: #1c1c1f; --content: #f5f5f7; --content-secondary: #a5a5ad; --accent: #80b5ff; --rule: #3d3d43; }
-  .equipment-section { background: #050506; }
-  .hero-image { opacity: .9; }
   .material-sample { background: #29292d; }
 }
 @media (max-width: 1000px) {
   .desktop-links { gap: 20px; }
   .nav { gap: 18px; }
-  .printer-feature { gap: 36px; }
   .service-card { padding: 30px 24px; }
-  .accessory-card { padding: 32px 28px 8px; }
-  .accessory-copy > p:not(.product-name) { min-height: 138px; }
   .material-grid { gap: 28px; }
   .process-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
   .community-content, .faq-layout, .experience-layout { gap: 48px; }
 }
 @media (max-width: 800px) {
+  .equipment-section { padding-block: 64px; }
+  .equipment-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .equipment-figure { max-width: 520px; width: 100%; margin-inline: auto; }
+  .start-option { padding: 20px; gap: 12px; }
   .container { width: calc(100% - 48px); }
   .section { padding-block: 80px; }
   .desktop-links { display: none; }
@@ -233,21 +230,13 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   .mobile-links a { display: flex; align-items: center; min-height: 52px; font-size: 1.125rem; }
   .mobile-links a:hover { color: var(--accent); }
   .hero-copy { padding-top: 64px; padding-bottom: 44px; }
-  .hero-image { aspect-ratio: 2.15; object-position: 65% center; }
   .service-strip { gap: 20px; font-size: .75rem; }
   .service-strip span + span { padding-left: 20px; }
-  .service-grid { grid-template-columns: 1fr; gap: 14px; }
-  .service-card { padding: 30px; display: grid; grid-template-columns: 48px 1fr; gap: 0 22px; }
+  .service-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .service-card { min-width: 0; padding: 30px; display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 0 22px; }
   .service-icon { grid-column: 1; grid-row: 1 / 4; margin: 0; }
-  .service-card h3, .service-card p, .service-card .card-caption { grid-column: 2; }
+  .service-card h3, .service-card p, .service-card .card-caption, .service-card .service-cta { grid-column: 2; }
   .service-card .card-caption { padding-top: 20px; }
-  .printer-feature { gap: 28px; }
-  .printer-copy > p:not(.product-name) { font-size: 1rem; }
-  .spec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .accessory-grid { gap: 18px; }
-  .accessory-card { padding-inline: 24px; }
-  .accessory-copy > p:not(.product-name) { min-height: 190px; font-size: 1rem; }
-  .ams-image, .dryer-image { height: 240px; }
   .material-grid { gap: 20px; }
   .material-sample { padding-inline: 10px; height: 150px; gap: 5px; }
   .material-sample span { width: 40px; height: 85px; }
@@ -258,6 +247,10 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   .experience-layout { grid-template-columns: minmax(0, 1fr); gap: 30px; }
 }
 @media (max-width: 600px) {
+  .start-options { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .start-option { padding: 20px; }
+  .hero-help { max-width: 320px; margin-inline: auto; }
+  .experience-layout { gap: 32px; }
   .container { width: calc(100% - 40px); }
   .nav { min-height: 64px; gap: 12px; }
   .wordmark { font-size: 1.375rem; }
@@ -269,34 +262,16 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   .desktop-break { display: none; }
   .hero .actions { gap: 10px 20px; }
   .hero .text-link { font-size: .9375rem; }
-  .hero-figure { width: calc(100% - 24px); }
-  .hero-image { aspect-ratio: 1.3; object-position: 67% center; border-radius: 18px; }
-  .hero-figure figcaption { flex-direction: column; align-items: center; gap: 3px; font-size: .6875rem; padding-top: 12px; }
   .service-strip { flex-direction: column; align-items: center; gap: 9px; padding-block: 28px; }
   .service-strip span + span { padding-left: 0; border: 0; }
   .section { padding-block: 68px; }
   .section-heading { margin-bottom: 36px; }
   .section-heading > p:not(.eyebrow) { font-size: 1.0625rem; margin-top: 22px; }
   .eyebrow { font-size: .6875rem; letter-spacing: .1em; }
-  .service-card { padding: 28px 24px; grid-template-columns: 1fr; gap: 0; border-radius: 22px; }
+  .service-card { padding: 28px 24px; grid-template-columns: minmax(0, 1fr); gap: 0; border-radius: 22px; }
   .service-icon { grid-column: 1; grid-row: auto; margin-bottom: 26px; width: 36px; height: 36px; }
-  .service-card h3, .service-card p, .service-card .card-caption { grid-column: 1; }
-  .equipment-section { padding-block: 70px 30px; }
-  .equipment-heading { text-align: left; }
-  .printer-feature { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .printer-copy { padding-block: 0; }
-  .printer-copy h3 { font-size: 3rem; }
-  .printer-copy > p:not(.product-name) { font-size: 1.0625rem; }
-  .feature-points { gap: 10px 16px; }
-  .nozzle-figure img { max-height: 440px; object-position: center 55%; border-radius: 18px; }
-  .spec-grid { grid-template-columns: 1fr; gap: 4px; }
+  .service-card h3, .service-card p, .service-card .card-caption, .service-card .service-cta { grid-column: 1; }
   .spec-content { font-size: .9375rem; }
-  .compact-heading { text-align: left; }
-  .accessory-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
-  .accessory-card { padding: 32px 24px 8px; border-radius: 22px; }
-  .accessory-copy h3 { font-size: 2.25rem; }
-  .accessory-copy > p:not(.product-name) { min-height: 0; font-size: 1rem; }
-  .ams-image, .dryer-image { height: 290px; margin-block: 0 10px; }
   .material-grid { grid-template-columns: 1fr; gap: 40px; }
   .material-sample { height: 200px; gap: 12px; }
   .material-sample span { width: 65px; height: 110px; }
@@ -330,11 +305,10 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
 }
 @media (prefers-reduced-transparency: reduce) {
   .site-header, .mobile-links { background: var(--surface); }
-  .hero-image { opacity: 1; }
 }
 @media (prefers-contrast: more) {
+  .experience-section { --content-secondary: #f5f5f7; --rule: #a5a5ad; }
   :root { --content-secondary: var(--content); --rule: var(--content); }
-  .equipment-section { --dark-secondary: #f5f5f7; --rule: #a5a5ad; }
   .text-link { text-decoration: underline; text-underline-offset: 4px; }
 }
 @media (forced-colors: active) {
@@ -343,13 +317,13 @@ details[open] > summary .disclosure-icon::after { transform: rotate(0); }
   .menu-lines::before, .menu-lines::after, .disclosure-icon::before, .disclosure-icon::after { background: ButtonText; }
 }
 @media print {
+  .experience-section { background: #fff; --content: #000; --content-secondary: #333; }
+  .start-options { display: none; }
   .site-header, .skip-link, .hero .actions, .contact-section .actions { display: none; }
   :root { --surface: #fff; --surface-secondary: #fff; --content: #000; --content-secondary: #333; }
   body { font-size: 11pt; }
-  .section, .equipment-section, .contact-section, .community-section { padding-block: 24px; }
-  .equipment-section { background: #fff; color: #000; --dark-secondary: #333; --dark-content: #000; }
-  .printer-copy h3 { font-size: 26pt; }
+  .section, .contact-section, .community-section { padding-block: 24px; }
   .hero-copy { padding-block: 24px; }
   .hero h1 { font-size: 32pt; }
-  .service-grid, .accessory-grid, .material-grid { break-inside: avoid; }
+  .service-grid, .material-grid { break-inside: avoid; }
 }

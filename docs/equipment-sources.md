@@ -36,7 +36,7 @@ Source: https://store.creality.com/products/creality-space-pi-filament-dryer
 
 ## Images
 
-Manufacturer imagery illustrates the equipment, not completed Gegebaskı work or a photograph of its premises.
+The X2D studio image is displayed in the concise equipment section with a manufacturer caption. Other manufacturer imagery is retained in the repository for reference. It illustrates equipment, not completed Gegebaskı work or a photograph of its premises.
 
 - X2D studio: https://portal.bblmw.com/x2d/x2dvfg8fqh6fx/product/1/x2d.jpg?x-oss-process=image%2Fformat%2Cwebp
 - X2D dual-nozzle detail: https://portal.bblmw.com/x2d/x2dvfg8fqh6fx/product/2/nozzle.jpg?x-oss-process=image%2Fformat%2Cwebp
